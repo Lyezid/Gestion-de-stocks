@@ -29,5 +29,4 @@ public class Utilisateur
     private Long nni;
     private en_user_type type;
 
-
 }

@@ -26,7 +26,7 @@ public class Category {
     private Long idCategory;
     private String nomCategory;
 
-    @OneToMany(mappedBy = "Category", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Produit> produits;
 
 }
