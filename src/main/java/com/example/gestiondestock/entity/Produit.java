@@ -1,13 +1,12 @@
 package com.example.gestiondestock.entity;
 
-import org.springframework.stereotype.Indexed;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,4 +30,7 @@ public class Produit {
     @JoinColumn(name = "idCategory")
     private Category category;
 
+    @ManyToMany
+    @JoinColumn(name = "stockId")
+    private Stock Stock;
 }
