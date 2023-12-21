@@ -1,5 +1,8 @@
 package com.example.gestiondestock.entity;
 
+// import com.example.gestiondestock.entity.Utilisateur;
+
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +33,6 @@ public class Produit {
     @JoinColumn(name = "idCategory")
     private Category category;
 
-    @ManyToMany
-    @JoinColumn(name = "stockId")
-    private Stock Stock;
+    @ManyToMany(mappedBy = "produit")
+    private List<Utilisateur> user;
 }
