@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -33,6 +34,11 @@ public class Produit {
     @JoinColumn(name = "idCategory")
     private Category category;
 
-    @ManyToMany(mappedBy = "produit")
-    private List<Utilisateur> user;
+   @ManyToMany
+    @JoinTable(
+        name = "produit-stock",
+        joinColumns = @JoinColumn(name = "product"),
+        inverseJoinColumns = @JoinColumn(name = "stockID")
+    )
+    private List<Stock> stocks; 
 }

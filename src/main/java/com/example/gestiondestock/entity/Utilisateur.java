@@ -34,9 +34,9 @@ public class Utilisateur
 
     @ManyToMany
     @JoinTable(
-        name = "utilisateur-produit",
-        joinColumns = @JoinColumn(name = "Utilisateur"),
-        inverseJoinColumns = @JoinColumn(name = "idProd")
+        name = "utilisateur-stock",
+        joinColumns = @JoinColumn(name = "user"),
+        inverseJoinColumns = @JoinColumn(name = "stockID")
     )
-    private List<Produit> produit; 
+    private List<Stock> stocks; 
 }

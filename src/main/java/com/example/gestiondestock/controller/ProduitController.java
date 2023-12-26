@@ -49,7 +49,7 @@ public class ProduitController {
     }
    
     @PutMapping("/Update/{Produit-id}")
-    public ResponseEntity<Optional<Produit>> upateUtilisateur(@PathVariable("Produit-id") Long produitId, @RequestBody Produit updateProduit){
+    public ResponseEntity<Optional<Produit>> upateProduit(@PathVariable("Produit-id") Long produitId, @RequestBody Produit updateProduit){
         return ResponseEntity.status(HttpStatus.OK)
         .body(produitService.updateProduit(produitId, updateProduit));
     }

@@ -39,7 +39,7 @@ public class ProduitService {
                                             prod.setPrix(updateProduit.getPrix());
                                             prod.setCategory(updateProduit.getCategory());
 
-                                            return produitRpository.save(updateProduit);
+                                            return produitRpository.save(prod);
                                         }
                                         );
     }
